@@ -1,51 +1,7 @@
 (function ($) {
   "use strict";
 
-
-// var client_logo = client_logo_slider
-
-var client_logo = $('.client_logo_slider')
-if(client_logo.length){
-  client_logo.owlCarousel({
-    items: 6,
-    loop: true,
-    responsive: {
-      0: {
-        items: 3,
-        margin: 15,
-      },
-      600: {
-        items: 3,
-        margin: 15,
-      },
-      991: {
-        items: 5,
-        margin: 15,
-      },
-      1200: {
-        items: 6,
-        margin: 15,
-      }
-    }             
-  });
-}
-
-
-
-  var review = $('.review_slider');
-  if (review.length) {
-    review.owlCarousel({
-      items: 1,
-      loop: true,
-      dots: true,
-      autoplay: false,
-      autoplayHoverPause: true,
-      autoplayTimeout: 5000,
-      nav: false,
-    });
-  }
-
-  $(document).ready(function() {
+  $(document).ready(function () {
     $('select').niceSelect();
   });
   // menu fixed js code
@@ -57,44 +13,142 @@ if(client_logo.length){
       $('.main_menu').removeClass('menu_fixed animated fadeInDown');
     }
   });
-
- $('.gallery_img').magnificPopup({
-  type: 'image',
-  gallery:{
-    enabled:true
-  }
-});
-
-// Search Toggle
-$("#search_input_box").hide();
-$("#search_1").on("click", function () {
-  $("#search_input_box").slideToggle();
-  $("#search_input").focus();
-});
-$("#close_search").on("click", function () {
-  $('#search_input_box').slideUp(500);
-});
-
-//------- Mailchimp js --------//  
-function mailChimp() {
-  $('#mc_embed_signup').find('form').ajaxChimp();
-}
-mailChimp();
-
-var acc = document.getElementsByClassName("accordion");
-var i;
-
-for (i = 0; i < acc.length; i++) {
-  acc[i].addEventListener("click", function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-      panel.style.maxHeight = null;
-    } else {
-      panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
+  $('.grid').masonry({
+    itemSelector: '.grid-item',
+    columnWidth: '.grid-sizer',
+    percentPosition: true
   });
-}
+
+  var client_logo = $('.client_logo_slider')
+  if (client_logo.length) {
+    client_logo.owlCarousel({
+      items: 6,
+      loop: true,
+      responsive: {
+        0: {
+          items: 3,
+          margin: 15,
+        },
+        600: {
+          items: 3,
+          margin: 15,
+        },
+        991: {
+          items: 5,
+          margin: 15,
+        },
+        1200: {
+          items: 6,
+          margin: 15,
+        }
+      }
+    });
+  }
+
+
+  $('.img-gal, .popup-youtube').magnificPopup({
+    type: 'image',
+    gallery: {
+      enabled: true
+    }
+  });
+  $('.popup-youtube').magnificPopup({
+    type: 'iframe',
+  });
+
+  var client_logo = $('.client_logo_slider')
+  if (client_logo.length) {
+    client_logo.owlCarousel({
+      items: 6,
+      loop: true,
+      responsive: {
+        0: {
+          items: 3,
+          margin: 15,
+        },
+        600: {
+          items: 3,
+          margin: 15,
+        },
+        991: {
+          items: 5,
+          margin: 15,
+        },
+        1200: {
+          items: 6,
+          margin: 15,
+        }
+      }
+    });
+  }
+
+  var review = $('.live_stareams_slide');
+  if (review.length) {
+    review.owlCarousel({
+      items: 2,
+      loop: true,
+      dots: false,
+      autoplay: true,
+      autoplayHoverPause: true,
+      autoplayTimeout: 5000,
+      nav: true,
+      navText: [
+        '<i class="fas fa-caret-left"></i>',
+        '<i class="fas fa-caret-right"></i>'
+      ],
+      margin: 15,
+      responsive: {
+        0: {
+          items: 1,
+          margin: 15,
+        },
+        600: {
+          items: 1,
+          margin: 15,
+        },
+        991: {
+          items: 1,
+          margin: 15,
+        },
+        1200: {
+          items: 2,
+          margin: 15,
+        }
+      }
+    });
+  }
+
+  function makeTimer() {
+    //		var endTime = new Date("29 April 2018 9:56:00 GMT+01:00");	
+    var endTime = new Date("24 sep 2019 9:56:00 GMT+06:00");
+    endTime = (Date.parse(endTime) / 1000);
+
+    var now = new Date();
+    now = (Date.parse(now) / 1000);
+
+    var timeLeft = endTime - now;
+
+    var days = Math.floor(timeLeft / 86400);
+    var hours = Math.floor((timeLeft - (days * 86400)) / 3600);
+
+    if (hours < "10") {
+      hours = "0" + hours;
+    }
+
+    $("#days").html(days + "<span>Days</span>");
+    $("#hours").html(hours + "<span>Hours</span>");
+
+  }
+
+  setInterval(function () {
+    makeTimer();
+  }, 1000);
+
+  //------- Mailchimp js --------//  
+  function mailChimp() {
+    $('#mc_embed_signup').find('form').ajaxChimp();
+  }
+  mailChimp();
 
 
 }(jQuery));

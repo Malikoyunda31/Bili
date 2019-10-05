@@ -1,12 +1,5 @@
 /************client css start***************/
 .client_logo{
-    padding: 0 0 140px;
-    @media #{$tab}{
-        padding: 0 0 70px;
-    }
-    @media #{$medium_device}{
-        padding: 0 0 100px;
-    }
     .single_client_logo{
         display: flex;
         align-items: center;
@@ -15,7 +8,7 @@
         width: auto;
     }
     .single_client_logo{
-        height: 100px;
+        height: 150px;
         img{
             margin: 0 auto;
         }

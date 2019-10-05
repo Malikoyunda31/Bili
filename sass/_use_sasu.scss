@@ -4,43 +4,67 @@
     z-index: 1;
     position: relative;
     z-index: 99;
-
-    @media #{$tab} {
-        padding: 70px 0 30px;
-    }
-
-    @media #{$medium_device} {
-
-    }
-
-    .feature_icon_1 {
+    
+    .feature_icon_1{
         position: absolute;
         left: 22%;
-        top: 15%;
+        top: 42%;
         z-index: -1;
-    }
-
+      }
+      
+      .feature_icon_2{
+        right: 20%;
+        top: 50%;
+        position: absolute;
+        z-index: -1;
+      }
+      .feature_icon_3{
+        position: absolute;
+        left: 3%;
+        z-index: -1;
+        bottom: 70%;
+      }
+      .feature_icon_4{
+        position: absolute;
+        right: 15%;
+        top: 7%;
+        z-index: -1;
+      }
     .single_feature_part {
+        padding: 40px 25px 31px;
         text-align: center;
-        padding: 0 15px;
-        @media #{$tab} {
-            margin-bottom: 40px;
+        border-radius: 5px;
+        box-shadow: 0px 3px 81px 0px rgba(216, 216, 216, 0.45);
+        @include transform_time(.6s);
+        background-color: $white_color;
+        @media #{$small_mobile} {
+            padding: 25px 10px;
+            margin-top: 25px;
+        }
+
+        @media #{$large_mobile} {
+            padding: 30px 15px;
+            margin-top: 25px;
+        }
+
+        @media #{$tab_device} {
+            padding: 30px 25px;
+            margin-top: 25px;
         }
 
         @media #{$medium_device} {
-            
+            margin-top: 25px;
         }
-        img {
-            margin-bottom: 33px;
-            height: 65px;
 
+
+        img {
+            margin-bottom: 21px;
+            height: 65px;
             @media #{$tab} {
                 margin-bottom: 21px;
             }
 
-            @media #{$medium_device} {
-
-            }
+            @media #{$medium_device} {}
 
             i {
                 color: $icon_color;

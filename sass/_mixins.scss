@@ -10,17 +10,16 @@
     -webkit-transition: $total_time;
     transition: $total_time;
 }
-
 @mixin gradient_color{
 	background: linear-gradient(to right, #ff0000 0%, #c6019a 50%, #ff0000 100%);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-size: 200% auto;
+	@include transition;
 	&:hover{
 		background-position: center right;
 	}
 }
-
 @mixin placeholder {
 	&.placeholder {
 		@content;

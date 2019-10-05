@@ -23,20 +23,22 @@
 }
 .btn_1{
 	display: inline-block;
-	padding: 13px 44px;
-	border-radius: 50px;
-	background-color: transparent;
+	padding: 18.5px 40px;
+	border-radius: 0;
+	@extend %custom_btn_bg_1;
 	font-size: 15px;
-	font-family: $font_stack_2;
+	font-family: $font_stack_1;
 	font-weight: 500;
-	color: $heading_color;
-	@include transform_time(0.5s);
-	text-transform: uppercase;
-	border: 1px solid $primary_color;
-
+	color: $white_color;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+	text-transform: capitalize;
+	background-size: 200% auto;
+	border: 1px solid transparent;
 	&:hover{
 		color: $white_color !important;
-		background-color: $btn_bg;
+		background-position: right center;
 	}
 	@media #{$small_mobile}{
 		padding: 10px 30px;
@@ -57,20 +59,24 @@
 }
 .btn_2{
 	display: inline-block;
-	padding: 12px 44px;
-	border-radius: 50px;
-	background-color: $primary_color;
+	padding: 18.5px 40px;
+	border-radius: 0;
+	background-color: $white_color;
 	font-size: 15px;
-	font-family: $font_stack_2;
+	font-family: $font_stack_1;
 	font-weight: 500;
-	color: $white_color;
-	@include transform_time(0.5s);
-	text-transform: uppercase;
-	border: 2px solid $primary_color;
+	color: #1a1a1a;
+    -o-transition: all .4s ease-in-out;
+    -webkit-transition: all .4s ease-in-out;
+    transition: all .4s ease-in-out;
+	text-transform: capitalize;
+	border: 1px solid #8f9091;
+	background-size: 200% auto;
 	&:hover{
-		color: $primary_color !important;
-		border: 2px solid $primary_color;
-		background-color: transparent;
+		color: $white_color !important;
+		border: 1px solid $btn_bg;
+		background-position: right center;
+		background-color: $primary_color;
 	}
 	@media #{$small_mobile}{
 		padding: 10px 30px;

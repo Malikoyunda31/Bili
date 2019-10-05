@@ -34,11 +34,11 @@
         }
     }
     .banner_btn_1{
-        color: $primary_color;
+        color: $btn_bg;
         border: 0px solid transparent;
         margin-right: 28px;
         &:hover{
-            background-color: $primary_color !important;
+            background-color: $btn_bg !important;
             color: $white_color;
             @extend %custom_btn_bg_2;
         }
@@ -49,7 +49,7 @@
         background-color: transparent;
         
         &:hover{
-            background-color: $primary_color !important;
+            background-color: $btn_bg !important;
             color: $white_color;
             @extend %custom_btn_bg_2;
             border: 1px solid transparent;

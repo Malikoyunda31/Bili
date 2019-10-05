@@ -1,5 +1,5 @@
 /**************** common css start ****************/
-@import url('https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed:300,400,500,600,700|Rajdhani:400,500,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Aclonica|Poppins:300,400,500,600&display=swap');
 body{
     font-family: $font_stack_1;
     padding: 0;
@@ -9,12 +9,9 @@ body{
 .message_submit_form:focus{
     outline: none;
 }
-input:hover, input:focus, .form-control:focus{
+input:hover, input:focus{
     outline: none !important;
-    box-shadow: 0 0 0 0.2rem transparent;
-    border: 1px solid #eaecee;
 }
-
 .gray_bg{
     background-color: $section_bg;
 }
@@ -88,21 +85,20 @@ a{
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: $heading_color;
+    color: $white_color;
     font-family: $font_stack_1;
 }
 p{
-    font-family: $font_stack_1;
-    line-height: 28px;
-    font-size: 16px;
+    font-family: $font_stack_2;
+    line-height: 29px;
+    font-size: 15px;
     margin-bottom: 0px;
-    color: $p_color;
-    font-weight: 400;
+    color: $white_color;
+    font-weight: 300;
 }
 h2 {
     font-size: 44px;
     line-height: 28px;
-    color: $heading_color;
     font-weight: 600;
     line-height: 1.222;
     @media #{$small_mobile}{
@@ -141,18 +137,18 @@ a:focus, .button:focus, button:focus, .btn:focus {
 }
 
 .section_tittle{
-    margin-bottom: 53px;
+    margin-bottom: 80px;
     @media #{$tab}{
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
     @media #{$medium_device}{
-        margin-bottom: 40px;
+        margin-bottom: 50px;
     }
     h2{
         font-size: 45px;
-        color: $heading_color;
-        line-height: 33px;
-        font-weight: 600;
+        color: $white_color;
+        line-height: 50px;
+        font-weight: 500;
         position: relative;
         margin-bottom: 28px;
         @media #{$small_mobile}{
@@ -177,7 +173,6 @@ a:focus, .button:focus, button:focus, .btn:focus {
         }
     }
     p{
-        color: #556172;
         text-transform: capitalize;
         line-height: 30px;
         font-family: $font_stack_2;
@@ -241,7 +236,7 @@ ul{
 
 @media #{$extra_big_screen}{
     .container {
-        max-width: 1170px;
+        max-width: 1200px;
     }
 }
 @media (max-width: 1200px) {
@@ -249,173 +244,27 @@ ul{
         display: none !important;
     }
 }
-.custom-animation1 {
-    backface-visibility: hidden;
-    animation: jumping 9s ease-in-out 2s infinite alternate;
-    animation-delay: 1s;
-    transition: all .9s ease 5s;
-    user-select: none;
+.body_bg{
+    @include background("../img/body_bg.png");
 }
-
-.custom-animation2 {
-    backface-visibility: hidden;
-    animation: jumping2 9s ease-in-out 2s infinite alternate;
-    animation-delay: 1s;
-    transition: all 1s ease 3s;
-    user-select: none;
-}
-
-.custom-animation3 {
-    backface-visibility: hidden;
-    animation: jumping3 9s ease-in-out 2s infinite alternate;
-    animation-delay: 1s;
-    transition: all 7s ease 2s;
-    user-select: none;
-}
-
-.custom-animation4 {
-    backface-visibility: hidden;
-    animation: jumping4 9s ease-in-out 2s infinite alternate;
-    animation-delay: 1s;
-    transition: all 8s ease 4s;
-    user-select: none;
-}
-
-.custom-animation5 {
-    backface-visibility: hidden;
-    animation: jumping5 9s ease-in-out 2s infinite alternate;
-    animation-delay: 1s;
-    transition: all 8s ease 4s;
-    user-select: none;
-}
-
-.custom-animation6 {
-    backface-visibility: hidden;
-    animation: jumping6 9s ease-in-out 2s infinite alternate;
-    animation-delay: 1s;
-    transition: all 8s ease 4s;
-    user-select: none;
-}
-
-@keyframes jumping {
-    0% {
-        transform: translateY(0px) translateX(0) rotate(0) scale(1);
-        opacity: .8;
+.black{
+    .footer_top{
+        padding: 65px 0 100px !important;
+		@media #{$tab} {
+			padding: 70px 0;
+		}
+		@media #{$medium_device} {
+			padding: 100px 0;
+		}
     }
-    25% {
-        transform: translateY(-10px) translateX(-10px) rotate(20deg) scale(.8);
-        opacity: .9;
+    p{
+        color: $font_8;
     }
-    50% {
-        transform: translateY(-15px) translateX(-15px) rotate(10deg) scale(.9);
-        opacity: .8;
-    }
-    75% {
-        transform: translateY(-20px) translateX(-20px) rotate(20deg) scale(.75);
-        opacity: .6;
-    }
-    85% {
-        transform: translateY(-25px) translateX(-25px) rotate(20deg) scale(.9);
-        opacity: .7;
-    }
-    100% {
-        transform: translateY(-15px) translateX(-15px) rotate(0) scale(.95);
-        opacity: .85;
-    }
-}
-
-@keyframes jumping2 {
-    0% {
-        transform: translateY(0px) translateX(0) rotate(0) scale(1);
-        opacity: .5;
-    }
-    25% {
-        transform: translateY(-30px) translateX(10px) rotate(20deg) scale(.8);
-        opacity: .8;
-    }
-    50% {
-        transform: translateY(15px) translateX(-15px) rotate(10deg) scale(.7);
-        opacity: .8;
-    }
-    75% {
-        transform: translateY(30px) translateX(20px) rotate(90deg) scale(.75);
-        opacity: .7;
-    }
-    100% {
-        transform: translateY(-15px) translateX(15px) rotate(0) scale(.75);
-        opacity: .9;
-    }
-}
-
-@keyframes jumping3 {
-    0% {
-        transform: translateY(10px) translateX(0) rotate(0) scale(1);
-        opacity: .9;
-    }
-    20% {
-        transform: translateY(20px) translateX(10px) rotate(-20deg) scale(.8);
-        opacity: .8;
-    }
-    40% {
-        transform: translateY(15px) translateX(-15px) rotate(10deg) scale(.75);
-        opacity: .8;
-    }
-    40% {
-        transform: translateY(-15px) translateX(-25px) rotate(10deg) scale(.5);
-        opacity: 1;
-    }
-    80% {
-        transform: translateY(-30px) translateX(20px) rotate(-20deg) scale(.75);
-        opacity: .6;
-    }
-    100% {
-        transform: translateY(15px) translateX(15px) rotate(0) scale(.95);
-        opacity: .7;
-    }
-}
-
-@keyframes jumping4 {
-    0% {
-        transform: translateY(-30px) translateX(40px) rotate(0) scale(1.2);
-        opacity: .7;
-    }
-    25% {
-        transform: translateY(-20px) translateX(0px) rotate(50deg) scale(.6);
-        opacity: .8;
-    }
-    50% {
-        transform: translateY(15px) translateX(-55px) rotate(20deg) scale(.5);
-        opacity: .9;
-    }
-    75% {
-        transform: translateY(30px) translateX(30px) rotate(50deg) scale(.75);
-        opacity: .7;
-    }
-    100% {
-        transform: translateY(-15px) translateX(5px) rotate(0) scale(.5);
-        opacity: .9;
-    }
-}
-
-@keyframes jumping5 {
-    0% {
-        transform: rotate(180deg);
-        display: block;
-    }
-    100% {
-        transform: rotate(30deg);
-        display: block;
-    }
-}
-
-@keyframes jumping6 {
-    0% {
-        transform: rotate(180deg) translate(-50px, 20px);
-        display: block;
-    }
-    100% {
-        transform: rotate(30deg) translate(0px, 0px);
-        display: block;
+    h2, h3, h4, h5{
+        color: #2f2d4e;
+    } 
+    .copygight_text{
+        background-color: #ebebeb !important;
     }
 }
 /**************** common css end ****************/

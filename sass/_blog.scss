@@ -12,8 +12,14 @@
         text-decoration: none;
         @include transform_time(.5s);
         &:hover, :hover{
-           color: $primary_color;
+           color: $btn_bg;
         }
+    }
+    p{
+        color: $font_8;
+    }
+    h1, h2, h3, h4, h5, h6{
+        color: #2f2d4e;
     }
 }
 
@@ -538,7 +544,7 @@
         color: $heading_color2;
 
         &:hover {
-            color: $primary_color !important;
+            color: $btn_bg !important;
         }
     }
 
@@ -598,7 +604,7 @@
         left: 10px;
         display: block;
         color: $white_color;
-        background-color: $primary_color;
+        background-color: $btn_bg;
         padding: 8px 15px;
         border-radius: 5px;
 
@@ -833,7 +839,7 @@
                     font-size: 13px;
 
                     &:hover {
-                        background: $primary_color;
+                        background: $btn_bg;
                         color: #fff !important;
                         -webkit-text-fill-color: #fff;
                         text-decoration: none;
@@ -1199,7 +1205,7 @@
 
             // color: $title-color;
             &:hover {
-                color: $primary_color;
+                color: $btn_bg;
             }
         }
 
